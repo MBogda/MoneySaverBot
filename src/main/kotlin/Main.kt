@@ -13,8 +13,10 @@ import dev.inmo.tgbotapi.utils.bold
 import dev.inmo.tgbotapi.utils.row
 import kotlinx.coroutines.delay
 
+val CONFIG = loadConfig("config.yaml")
+
 suspend fun main() {
-    val bot = telegramBot("5618536310:AAFpLkEr0PICiW65Lu4t_QE0LGkadacDtKM")
+    val bot = telegramBot(CONFIG.application.botApiToken)
 
     bot.buildBehaviourWithLongPolling {
         println(getMe())

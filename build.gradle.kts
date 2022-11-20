@@ -12,10 +12,14 @@ repositories {
     mavenCentral()
 }
 
+val jacksonVersion: String by project
+
 dependencies {
     testImplementation(kotlin("test"))
 
-    implementation("dev.inmo:tgbotapi:4.1.1")
+    implementation("dev.inmo", "tgbotapi", "4.1.1")
+    implementation("com.fasterxml.jackson.module", "jackson-module-kotlin", jacksonVersion)
+    implementation("com.fasterxml.jackson.dataformat", "jackson-dataformat-yaml", jacksonVersion)
 }
 
 tasks.test {
